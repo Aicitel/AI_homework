@@ -1,6 +1,7 @@
 package com.iflytek.voicedemo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.iflytek.cloud.ErrorCode;
 import com.iflytek.cloud.InitListener;
@@ -18,9 +20,27 @@ import com.iflytek.cloud.RecognizerResult;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.SpeechRecognizer;
+import com.iflytek.cloud.SpeechSynthesizer;
+import com.iflytek.cloud.SynthesizerListener;
 import com.iflytek.speech.setting.IatSettings;
+import com.iflytek.speech.util.JsonParser;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class figureDemo extends MainActivity{
+    //showTip
+    private String TAG = "test";
+    private Toast mToast;
+    private void showTip(final String str) {
+        mToast.setText(str);
+        mToast.show();
+    }
+    //current voice string
+    String cntVoiceString = "";
 
     //REMAINING custom widget
     EditText answerText1 = null;
@@ -43,9 +63,21 @@ public class figureDemo extends MainActivity{
     int order =1;
 
     //REMAINING xunfei interface
-
+    // 语音听写对象
     private SpeechRecognizer mIat;
+    // 引擎类型
     private String mEngineType = SpeechConstant.TYPE_CLOUD;
+    // 用HashMap存储听写结果
+    private HashMap<String, String> mIatResults = new LinkedHashMap<String, String>();
+
+
+    // 语音合成对象
+    private SpeechSynthesizer mTts;
+    // 默认发音人
+    private String voicer = "xiaoyan";
+    // 情感
+    private String emot= "";
+
 
     //REMAINING userMonitor interface
 
@@ -54,37 +86,23 @@ public class figureDemo extends MainActivity{
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.figuredemo);
         initLayout();
+        mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
         mSharedPreferences = getSharedPreferences(IatSettings.PREFER_NAME,
                 Activity.MODE_PRIVATE);
 
+        mTts = SpeechSynthesizer.createSynthesizer(figureDemo.this, mTtsInitListener);
         mIat = SpeechRecognizer.createRecognizer(figureDemo.this, mInitListener);
+        startListener();
     }
     public boolean judgeAnswer(int order){
+        if(answerText1.getText()==null || answerText1.getText().toString().equals(""))
+            return false;
         return (Integer.parseInt(answerText1.getText().toString()) == answers[order]);
     }
-    /*
-    public boolean judgeAnswer(int order) {
-        switch (order) {
-            case 1:
-                return (Integer.parseInt(answerText1.getText().toString()) == 7);
-            case 2:
-                return (Integer.parseInt(answerText2.getText().toString()) == 15);
-            case 3:
-                return (Integer.parseInt(answerText3.getText().toString()) == 16);
-        }
-        return false;
-    }*/
+
     public void initLayout(){
         answerText1 = (EditText)findViewById(R.id.answerText1);
         problemText1 = (TextView)findViewById(R.id.problemTextView1);
-        answerText2 = (EditText)findViewById(R.id.answerText2);
-        answerText2.setVisibility(View.INVISIBLE);
-        problemText2 = (TextView)findViewById(R.id.problemTextView2);
-        problemText2.setVisibility(View.INVISIBLE);
-        answerText3 = (EditText)findViewById(R.id.answerText3);
-        answerText3.setVisibility(View.INVISIBLE);
-        problemText3 = (TextView)findViewById(R.id.problemTextView3);
-        problemText3.setVisibility(View.INVISIBLE);
 
         infoText = (TextView)findViewById(R.id.dialogueTextView);
 
@@ -96,25 +114,57 @@ public class figureDemo extends MainActivity{
         mEngineType = SpeechConstant.TYPE_CLOUD;
 
         //REMAINING should replaced by voice interaction
+        //          should get questions from db
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(order>=4){
+                if (order >= 4) {
                     infoText.setText("全对！");
-                }
-                else {
+                } else {
                     if (judgeAnswer(order)) {
+                        infoText.setText("第" + order + "题对啦");
+                        questionCorResponse(true);
                         order++;
-                        if(order<=3)
+                        if (order <= 3)
                             problemText1.setText(problems[order]);
-                    }
-                    else{
-                        infoText.setText("第"+order+"题错了哦");
+                    } else {
+                        infoText.setText("第" + order + "题错了哦");
+                        questionCorResponse(false);
                     }
                 }
             }
         });
     }
+    /**
+     * 返回nav应答反馈
+     */
+    public void returnNavResponse(){
+        String text = "那我们回到开始吧";
+        // 设置参数
+        setParam();
+        int code = mTts.startSpeaking(text, mTtsListener);
+        startActivity(new Intent(figureDemo.this, entranceDemo.class));
+    }
+    /**
+     * 正误判断反馈
+     */
+    public void questionCorResponse(boolean isCorrect){
+        String text = (isCorrect)?"好棒答对了！":"不太对哦，再想想看？";
+        int code = mTts.startSpeaking(text, mTtsListener);
+    }
+    /**
+     * 监听入口
+     */
+    public void startListener(){
+        int ret = mIat.startListening(mRecognizerListener);
+        if (ret != ErrorCode.SUCCESS) {
+            showTip("听写失败,错误码：" + ret);
+        } else {
+            showTip(getString(R.string.text_begin));
+        }
+    }
+
+
     /**
      * 初始化监听器。
      */
@@ -124,7 +174,7 @@ public class figureDemo extends MainActivity{
         public void onInit(int code) {
             Log.d("TAG", "SpeechRecognizer init() code = " + code);
             if (code != ErrorCode.SUCCESS) {
-                //showTip("初始化失败，错误码：" + code);
+                showTip("初始化失败，错误码：" + code);
                 ;
             }
         }
@@ -146,7 +196,7 @@ public class figureDemo extends MainActivity{
             // Tips：
             // 错误码：10118(您没有说话)，可能是录音机权限被禁，需要提示用户打开应用的录音权限。
             // 如果使用本地功能（语记）需要提示用户开启语记的录音权限。
-            //showTip(error.getPlainDescription(true));
+            showTip(error.getPlainDescription(true));
         }
 
         @Override
@@ -157,11 +207,17 @@ public class figureDemo extends MainActivity{
 
         @Override
         public void onResult(RecognizerResult results, boolean isLast) {
-           // Log.d(TAG, results.getResultString());
-            //printResult(results);
+            printResult(results);
             //REMAINING send results to AI
 
             if (isLast) {
+                //unicode code = 不想做
+                String reg=".*\\u4e0d\\u60f3\\u505a.*";
+
+                if(cntVoiceString.matches(reg))
+                    returnNavResponse();
+                else
+                    startListener();
                 // TODO 最后的结果
             }
         }
@@ -182,48 +238,6 @@ public class figureDemo extends MainActivity{
             //	}
         }
     };
-    public class MyOnClickListener implements View.OnClickListener{
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()) {
-                // 开始听写
-                // 如何判断一次听写结束：OnResult isLast=true 或者 onError
-                case R.id.iat_recognize:
-                    //mResultText.setText(null);// 清空显示内容
-                    //mIatResults.clear();
-                    // 设置参数
-                    setParam();
-                    boolean isShowDialog = mSharedPreferences.getBoolean(
-                            getString(R.string.pref_key_iat_show), true);
-                    if (isShowDialog) {
-                        // 显示听写对话框
-                        //mIatDialog.setListener(mRecognizerDialogListener);
-                        //mIatDialog.show();
-                        //showTip(getString(R.string.text_begin));
-                    } else {
-                        // 不显示听写对话框
-                        int  ret = 0;
-                        ret = mIat.startListening(mRecognizerListener);
-                        if (ret != ErrorCode.SUCCESS) {
-                            //showTip("听写失败,错误码：" + ret);
-                        } else {
-                            //showTip(getString(R.string.text_begin));
-                        }
-                    }
-                    break;
-                // 停止听写
-                case R.id.iat_stop:
-                    mIat.stopListening();
-                    //showTip("停止听写");
-                    break;
-                // 取消听写
-                case R.id.iat_cancel:
-                    mIat.cancel();
-                    //showTip("取消听写");
-                    break;
-            }
-        }
-    }
     /**
      * 参数设置
      *
@@ -233,7 +247,6 @@ public class figureDemo extends MainActivity{
     public void setParam() {
         // 清空参数
         mIat.setParameter(SpeechConstant.PARAMS, null);
-
         // 设置听写引擎
         mIat.setParameter(SpeechConstant.ENGINE_TYPE, mEngineType);
         // 设置返回结果格式
@@ -270,4 +283,111 @@ public class figureDemo extends MainActivity{
         mIat.setParameter(SpeechConstant.ASR_DWA, mSharedPreferences.getString("iat_dwa_preference", "0"));
     }
 
+    private void printResult(RecognizerResult results) {
+        String text = JsonParser.parseIatResult(results.getResultString());
+
+        String sn = null;
+        // 读取json结果中的sn字段
+        try {
+            JSONObject resultJson = new JSONObject(results.getResultString());
+            sn = resultJson.optString("sn");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        mIatResults.put(sn, text);
+
+        StringBuffer resultBuffer = new StringBuffer();
+        for (String key : mIatResults.keySet()) {
+            resultBuffer.append(mIatResults.get(key));
+        }
+        //mResultText.setText(resultBuffer.toString());
+        cntVoiceString = resultBuffer.toString();
+        resultBuffer = null;
+    }
+
+
+    /**
+     * 初始化监听。语音合成
+     */
+    private InitListener mTtsInitListener = new InitListener() {
+        @Override
+        public void onInit(int code) {
+            Log.d(TAG, "InitListener init() code = " + code);
+            if (code != ErrorCode.SUCCESS) {
+                showTip("初始化失败,错误码："+code);
+            } else {
+                // 初始化成功，之后可以调用startSpeaking方法
+                // 注：有的开发者在onCreate方法中创建完合成对象之后马上就调用startSpeaking进行合成，
+                // 正确的做法是将onCreate中的startSpeaking调用移至这里
+            }
+        }
+    };
+
+    /**
+     * 合成回调监听。
+     */
+    private SynthesizerListener mTtsListener = new SynthesizerListener() {
+
+        @Override
+        public void onSpeakBegin() {
+            showTip("开始播放");
+        }
+
+        @Override
+        public void onSpeakPaused() {
+            showTip("暂停播放");
+        }
+
+        @Override
+        public void onSpeakResumed() {
+            showTip("继续播放");
+        }
+
+        @Override
+        public void onBufferProgress(int percent, int beginPos, int endPos,
+                                     String info) {
+            // 合成进度
+            // mPercentForBuffering = percent;
+            // showTip(String.format(getString(R.string.tts_toast_format),
+            //         mPercentForBuffering, mPercentForPlaying));
+        }
+
+        @Override
+        public void onSpeakProgress(int percent, int beginPos, int endPos) {
+            // 播放进度
+            //mPercentForPlaying = percent;
+            //showTip(String.format(getString(R.string.tts_toast_format),
+            //        mPercentForBuffering, mPercentForPlaying));
+        }
+
+        @Override
+        public void onCompleted(SpeechError error) {
+            if (error == null) {
+                //showTip("播放完成");
+
+            } else if (error != null) {
+                showTip(error.getPlainDescription(true));
+            }
+        }
+
+        @Override
+        public void onEvent(int eventType, int arg1, int arg2, Bundle obj) {
+            // 以下代码用于获取与云端的会话id，当业务出错时将会话id提供给技术支持人员，可用于查询会话日志，定位出错原因
+            // 若使用本地能力，会话id为null
+            //	if (SpeechEvent.EVENT_SESSION_ID == eventType) {
+            //		String sid = obj.getString(SpeechEvent.KEY_EVENT_SESSION_ID);
+            //		Log.d(TAG, "session id =" + sid);
+            //	}
+        }
+    };
+
+    /**
+     * 返回键退出
+     */
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.exit(0);
+    }
 }

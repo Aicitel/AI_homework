@@ -138,6 +138,7 @@
     <dimen name="line_height">1dp</dimen>
     <dimen name="margin_">10dp</dimen>
     <dimen name="pading_">5dp</dimen>
+    <dimen name="question_size">38dp</dimen>
     <dimen name="txt_size">18sp</dimen>
     <!-- From: file:/C:/Users/bluemaple/AndroidStudioProjects/SpeechDemo1/app/src/main/res/values/colors.xml -->
     <eat-comment/>

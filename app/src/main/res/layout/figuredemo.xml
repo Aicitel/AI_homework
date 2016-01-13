@@ -13,101 +13,68 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="fill_parent">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="go chat"
-                android:id="@+id/chatButton"
-                android:layout_gravity="center_horizontal"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="go chat"
+                    android:id="@+id/chatButton"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true" />
 
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:id="@+id/figureView"
-                android:src="@drawable/pic1"
-                android:layout_alignParentBottom="true"
-                android:layout_alignRight="@+id/answerText3"
-                android:layout_marginBottom="34dp" />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/figureView"
+                    android:src="@drawable/pic1"
+                    android:layout_alignTop="@+id/dialogueTextView"
+                    android:layout_toRightOf="@+id/dialogueTextView"
+                    android:layout_marginTop="85dp" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="submit"
-                android:id="@+id/submitButton"
-                android:layout_below="@+id/answerText3"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="43dp" />
+                <EditText
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/answerText1"
+                    android:layout_marginTop="68dp"
+                    android:layout_alignLeft="@+id/submitButton"
+                    android:layout_marginLeft="34dp" />
 
-            <EditText
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-                android:id="@+id/answerText1"
-                android:layout_marginTop="68dp"
-                android:layout_alignLeft="@+id/submitButton"
-                android:layout_marginLeft="34dp" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="submit"
+                    android:id="@+id/submitButton"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignTop="@id/answerText1"
+                    android:layout_marginTop="63dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="2+5=?"
-                android:id="@+id/problemTextView1"
-                android:layout_alignTop="@+id/answerText1"
-                android:layout_toLeftOf="@+id/answerText1"
-                android:layout_marginRight="45dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="2+5=?"
+                    android:id="@+id/problemTextView1"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/question_size"
+                    android:layout_alignTop="@+id/answerText1"
+                    android:layout_toLeftOf="@+id/submitButton" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="2+5=?"
-                android:id="@+id/problemTextView2"
-                android:layout_below="@+id/answerText1"
-                android:layout_alignLeft="@+id/problemTextView1" />
-                android:layout_marginRight="45dp" />
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="140dp"
+                    android:id="@+id/dialogueTextView"
+                    android:background="@drawable/dialogue"
+                    android:text="试试看?"
+                    android:gravity="center"
+                    android:textColor="#004fff"
+                    android:layout_centerVertical="true"
+                    android:layout_alignRight="@+id/submitButton" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="11+5=?"
-                android:id="@+id/problemTextView3"
-                android:layout_below="@+id/answerText2"
-                android:layout_alignLeft="@+id/problemTextView1" />
-
-            <EditText
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-                android:id="@+id/answerText2"
-                android:layout_alignLeft="@+id/answerText1"
-                android:layout_below="@+id/answerText1" />
-
-            <EditText
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-                android:id="@+id/answerText3"
-                android:layout_alignTop="@+id/problemTextView3"
-                android:layout_alignLeft="@+id/answerText2" />
-
-            <TextView
-                android:layout_width="160dp"
-                android:layout_height="140dp"
-                android:id="@+id/dialogueTextView"
-                android:background="@drawable/dialogue"
-                android:text="试试看?"
-                android:gravity="center"
-                android:textColor="#004fff"
-                android:layout_below="@+id/submitButton"
-                android:layout_alignLeft="@+id/problemTextView3" />
-
-
-        </RelativeLayout>
+            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>

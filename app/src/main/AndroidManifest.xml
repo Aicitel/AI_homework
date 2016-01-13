@@ -9,7 +9,7 @@
         android:name="SpeechApp"
         android:label="讯飞语音示例" >
         <activity
-            android:name="com.iflytek.voicedemo.figureDemo"
+            android:name="com.iflytek.voicedemo.entranceDemo"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:icon="@drawable/icon"
             android:label="AI homework"
@@ -48,6 +48,11 @@
         </activity>
         <activity
             android:name="com.iflytek.voicedemo.IseDemo"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.iflytek.voicedemo.figureDemo"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:screenOrientation="portrait" >
         </activity>
