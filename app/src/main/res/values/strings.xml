@@ -154,4 +154,13 @@
         <item>开启</item>
         <item>关闭</item>
     </string-array>
+
+    <!--game strings-->
+
+    <string name="myself">自己</string>
+    <string name="challenger">对手</string>
+    <string name="computer">电脑</string>
+    <string name="restart">新开</string>
+    <string name="rollback">悔棋</string>
+
 </resources>

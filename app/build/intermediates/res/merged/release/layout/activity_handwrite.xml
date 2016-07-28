@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/problemTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:textColor="@color/black"
+        android:text="题目"
+        android:textSize="25sp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/wordSurface2" />
+        
+    <SurfaceView
+        android:id="@+id/surface"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/tianzige"
+        android:layout_marginBottom="83dp" />
+
+    <SurfaceView
+        android:id="@+id/wordSurface1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/tianzige"
+        android:layout_below="@+id/problemTextView"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@+id/surface"
+        android:layout_toLeftOf="@+id/problemTextView" />
+
+    <SurfaceView
+        android:id="@+id/wordSurface2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/tianzige"
+        android:layout_alignTop="@+id/wordSurface1"
+        android:layout_alignRight="@+id/surface" />
+
+    <TextView
+        android:id="@+id/line_result1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="你写了"
+        android:textColor="@color/black"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/line_result2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/line_result1"
+        android:layout_below="@+id/line_result1"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="你写了" />
+
+    <TextView
+        android:id="@+id/line_result3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/line_result2"
+        android:layout_below="@+id/line_result2"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="你写了" />
+    
+</RelativeLayout><!-- From: file:/C:/Users/bluemaple/AndroidStudioProjects/SpeechDemo1/app/src/main/res/layout/activity_handwrite.xml -->

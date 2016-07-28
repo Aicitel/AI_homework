@@ -128,17 +128,41 @@
     </string-array>
     <!-- From: file:/C:/Users/bluemaple/AndroidStudioProjects/SpeechDemo1/app/src/main/res/values/colors.xml -->
     <eat-comment/>
+    <color name="black">#000000</color>
     <color name="content_color">#737373</color>
     <color name="list_backgroud_color">#2fb3cb</color>
     <color name="title_color">#0f8ec5</color>
     <color name="white">#FFFFFF</color>
     <!-- From: file:/C:/Users/bluemaple/AndroidStudioProjects/SpeechDemo1/app/src/main/res/values/dimen.xml -->
     <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="anchorWidth">5px</dimen>
+    <dimen name="blackboard_height">270dp</dimen>
+    <dimen name="blackboard_width">800dp</dimen>
+    <dimen name="boardWidth">1px</dimen>
     <dimen name="btn_size">22sp</dimen>
+    <dimen name="choice_item_margin_top">30dp</dimen>
+    <dimen name="english_height">450dp</dimen>
+    <dimen name="figure_height">320dp</dimen>
+    <dimen name="figure_height_mobile">160dp</dimen>
+    <dimen name="figure_right_margin">50dp</dimen>
+    <dimen name="figure_width">170dp</dimen>
+    <dimen name="figure_width_mobile">85dp</dimen>
+    <dimen name="layout_height">360dp</dimen>
+    <dimen name="layout_height_mobile">240dp</dimen>
+    <dimen name="layout_width">800dp</dimen>
+    <dimen name="layout_width_mobile">240dp</dimen>
     <dimen name="line_height">1dp</dimen>
     <dimen name="margin_">10dp</dimen>
+    <dimen name="margin_left">60dp</dimen>
+    <dimen name="margin_left_mobile">30dp</dimen>
     <dimen name="pading_">5dp</dimen>
-    <dimen name="question_size">38dp</dimen>
+    <dimen name="problem_size">40sp</dimen>
+    <dimen name="question_size">28dp</dimen>
+    <dimen name="subject_choose_height">600dp</dimen>
+    <dimen name="subject_choose_width">600dp</dimen>
+    <dimen name="title_size">18sp</dimen>
     <dimen name="txt_size">18sp</dimen>
     <!-- From: file:/C:/Users/bluemaple/AndroidStudioProjects/SpeechDemo1/app/src/main/res/values/colors.xml -->
     <eat-comment/>
@@ -148,10 +172,15 @@
     <eat-comment/>
     <string name="app_id">566d0a35</string>
     <string name="app_name">讯飞语音示例</string>
+    <string name="challenger">对手</string>
+    <string name="computer">电脑</string>
     <string name="example_explain">本示例为讯飞语音Android平台开发者提供语音听写、语法识别、语义理解和语音合成等代码样例，旨在让用户能够依据该示例快速开发出基于语音接口的应用程序。</string>
+    <string name="myself">自己</string>
     <string name="pref_key_iat_show">iat_show</string>
     <string name="pref_title_iat_dwa">结果动态修正</string>
     <string name="pref_title_iat_show">显示听写界面</string>
+    <string name="restart">新开</string>
+    <string name="rollback">悔棋</string>
     <string name="text_begin">请开始说话…</string>
     <string name="text_begin_recognizer">开始音频流识别</string>
     <string name="text_cn_sentence">"一座座雪峰插入云霄，峰顶银光闪闪，大大小小的湖泊，像颗颗宝石镶嵌在彩带般的沟谷中。"</string>
@@ -171,14 +200,21 @@
     <string formatted="false" name="tts_toast_format">缓冲进度为%d%%，播放进度为%d%%</string>
     <!-- From: file:/C:/Users/bluemaple/AndroidStudioProjects/SpeechDemo1/app/src/main/res/values/styles.xml -->
     <eat-comment/>
-    <style name="dialog" parent="@android:style/Theme.Dialog">
-  <item name="android:windowFrame">@null</item>
-  <item name="android:windowIsFloating">true</item>
-  <item name="android:windowIsTranslucent">true</item>
-  <item name="android:windowNoTitle">true</item>
-  <item name="android:background">@android:color/transparent</item>
-  <item name="android:windowBackground">@android:color/transparent</item>
-  <item name="android:backgroundDimEnabled">true</item>
-  <item name="android:backgroundDimAmount">0.6</item>
- </style>
+    <style name="CustomTheme" parent="@android:style/Theme">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+    <style name="cn_partread_highlight">
+        <item name="android:textColor">#008fff</item>
+    </style>
+    <style name="cn_partread_normal">
+        <item name="android:textColor">#000000</item>
+    </style>
 </resources>

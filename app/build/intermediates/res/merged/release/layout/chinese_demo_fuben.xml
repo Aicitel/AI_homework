@@ -1,0 +1,188 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <fragment
+        android:id="@+id/question_fragment"
+        android:name="com.aihomework.questions.ChineseCopyFragment"
+        android:layout_marginTop="100dp"
+        android:layout_width="@dimen/figure_width_mobile"
+        android:layout_height="@dimen/layout_height_mobile" />
+
+    <TextView
+        android:id="@+id/problemTextView"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:text="题目"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/stemLayout"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height"
+        android:layout_below="@+id/problemTextView"
+        android:gravity="center"
+        android:layout_alignParentLeft="true">
+
+        <TextView
+            android:id="@+id/stemTextView"
+            android:textColor="@color/black"
+            android:text="题干"
+            android:textSize="@dimen/question_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/readLayout"
+        android:visibility="invisible"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height">
+
+        <TextView
+            android:id="@+id/readText"
+            android:layout_marginLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="这里是课文" />
+
+        <TextView
+            android:id="@+id/readTempText"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="[答案]" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/surfaceLayout"
+        android:visibility="invisible"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height">
+
+        <SurfaceView
+            android:id="@+id/wordSurface1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/tianzige"
+            android:layout_marginTop="10dp"
+            android:layout_alignLeft="@+id/surface" />
+
+        <SurfaceView
+            android:id="@+id/wordSurface2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/tianzige"
+            android:layout_alignTop="@+id/wordSurface1"
+            android:layout_alignRight="@+id/surface" />
+
+        <SurfaceView
+            android:id="@+id/surface"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/tianzige"
+            android:layout_below="@+id/wordSurface1"
+            android:layout_centerHorizontal="true" />
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/dictationButton"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/dictationbutton" />
+
+        <TextView
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressText"
+            android:textSize="@dimen/question_size"
+            android:textColor="@color/black"
+            android:layout_below="@+id/wordSurface1"
+            android:layout_centerHorizontal="true"
+            android:text="0 / 2" />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="@dimen/figure_width"
+        android:layout_height="@dimen/figure_height"
+        android:id="@+id/figureView"
+        android:layout_marginRight="@dimen/figure_right_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/line_result1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="你写了"
+        android:textColor="@color/black"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/debugEditText"
+        android:layout_alignBottom="@+id/line_result2"
+        android:layout_toRightOf="@+id/problemTextView"
+        android:text="input" />
+
+    <Button
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="submit"
+        android:id="@+id/submitButton"
+        android:layout_alignTop="@+id/debugEditText"
+        android:layout_toRightOf="@+id/debugEditText" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/rightImageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/right" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rightMarkImageView"
+        android:src="@drawable/rightmark"
+        android:layout_marginTop="300dp"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout><!-- From: file:/C:/Users/bluemaple/AndroidStudioProjects/SpeechDemo1/app/src/main/res/layout/chinese_demo_fuben.xml -->

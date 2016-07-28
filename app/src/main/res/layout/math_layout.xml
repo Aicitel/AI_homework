@@ -1,0 +1,144 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="submit"
+        android:id="@+id/submitButton"
+        android:layout_alignParentTop="true"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:textSize="@dimen/question_size"
+        android:text="题目"
+        android:id="@+id/problemTextView"
+        android:textColor="#000000"
+        android:layout_marginTop="49dp" />
+
+    <RelativeLayout
+        android:id="@+id/stemLayout"
+        android:visibility="invisible"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/problemTextView"
+        android:gravity="center"
+        android:layout_alignParentLeft="true">
+
+        <TextView
+            android:id="@+id/stemTextView"
+            android:textColor="@color/black"
+            android:text="题干"
+            android:textSize="@dimen/question_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/choice_listview"
+        android:visibility="invisible"
+        android:divider="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_below="@+id/problemTextView"
+        android:layout_alignParentLeft="true">
+
+    </ListView>
+
+    <SurfaceView
+        android:id="@+id/formula_surface"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/problemTextView"
+        android:background="@drawable/mathboard"
+        android:layout_alignParentLeft="true" />
+
+    <RelativeLayout
+        android:id="@+id/fillinLayout"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/problemTextView"
+        android:layout_alignParentLeft="true" >
+        <TextView
+            android:id="@+id/fillinText"
+            android:text="fillin Text"
+            android:gravity="center_vertical"
+            android:textColor="#000000"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginLeft="50dp"
+            />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/formula_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:text="2333" />
+
+    <ImageView
+        android:layout_width="@dimen/figure_width"
+        android:layout_height="@dimen/figure_height"
+        android:id="@+id/figureView"
+        android:layout_marginRight="@dimen/figure_right_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/tulingRobotImage"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/tulingrobot_unused" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上一题"
+        android:id="@+id/lastButton"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/submitButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下一题"
+        android:id="@+id/nextButton"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/lastButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="清除"
+        android:id="@+id/delButton"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/nextButton" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/rightImageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/right" />
+
+</RelativeLayout>

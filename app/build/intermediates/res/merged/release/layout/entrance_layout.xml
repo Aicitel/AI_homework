@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/bg_entrance_pingban"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="handwriteTest"
+        android:id="@+id/handWriteButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="square"
+        android:id="@+id/mathsquareButton"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/handWriteButton" />
+
+    <TextView
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/userTextView"
+        android:layout_gravity="center_horizontal" />
+
+    <ImageView
+        android:visibility="invisible"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/tulingRobotImage"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/tulingrobot_unused" />
+
+    <TextView
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="67dp"
+        android:text="result"
+        android:id="@+id/entranceText"
+        android:layout_gravity="right"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="gethomework"
+        android:id="@+id/getButton"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/mathsquareButton" />
+
+    <Button
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="readdemo"
+        android:id="@+id/readDemoButton"
+        android:layout_below="@+id/handWriteButton"
+        android:layout_toRightOf="@+id/userTextView" />
+
+    <RelativeLayout
+        android:layout_width="@dimen/subject_choose_height"
+        android:layout_height="@dimen/subject_choose_width"
+        android:id="@+id/activityLayout"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="作业"
+            android:id="@+id/homeworkLabel"
+            android:textColor="#004fff"
+            android:textSize="@dimen/title_size"
+            android:layout_marginTop="250dp"
+            android:layout_marginLeft="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="玩一会"
+            android:id="@+id/gameLabel"
+            android:textColor="#ff2f00"
+            android:textSize="@dimen/title_size"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="朋友们"
+            android:id="@+id/socialLabel"
+            android:textColor="#00ff0f"
+            android:textSize="@dimen/title_size"
+            android:layout_marginTop="350dp"
+            android:layout_marginLeft="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="invisible"
+        android:layout_width="@dimen/subject_choose_height"
+        android:layout_height="@dimen/subject_choose_width"
+        android:id="@+id/homeworkLayout"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:id="@+id/imageViewCN"
+            android:scaleType="fitXY"
+            android:src="@drawable/chinese_label_tablet"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="100dp"
+            android:layout_marginLeft="100dp"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="135dp"
+            android:id="@+id/imageViewMA"
+            android:scaleType="fitXY"
+            android:src="@drawable/math_label_tablet"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="100dp" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:id="@+id/imageViewEN"
+            android:scaleType="fitXY"
+            android:src="@drawable/english_label_tablet"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="100dp"/>
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="@dimen/figure_width"
+        android:layout_height="@dimen/figure_height"
+        android:id="@+id/figureView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/figure_right_margin"
+        />
+
+
+</RelativeLayout><!-- From: file:/C:/Users/bluemaple/AndroidStudioProjects/SpeechDemo1/app/src/main/res/layout/entrance_layout.xml -->

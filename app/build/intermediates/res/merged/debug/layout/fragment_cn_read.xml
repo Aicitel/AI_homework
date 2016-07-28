@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#00000000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:id="@+id/readLayout"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height">
+
+        <TextView
+            android:id="@+id/readText"
+            android:layout_width="@dimen/subject_choose_width"
+            android:layout_height="@dimen/blackboard_height"
+            android:background="@drawable/blackboard"
+            android:textColor="@color/white"
+            android:textSize="@dimen/problem_size"
+            android:gravity="center"
+            android:text="花束"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/readTempText"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="[答案]" />
+    </RelativeLayout>
+
+</RelativeLayout><!-- From: file:/C:/Users/bluemaple/AndroidStudioProjects/SpeechDemo1/app/src/main/res/layout/fragment_cn_read.xml -->

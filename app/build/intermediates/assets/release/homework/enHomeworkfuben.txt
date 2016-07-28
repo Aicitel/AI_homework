@@ -1,0 +1,184 @@
+{
+    "subjectType":2,
+    "homework":[
+        {
+        "knowledgeType":"",
+        "guideText":"我们先来单词",
+        "questionText":"",
+        "stemText":"单词朗读练习",
+        "stemType":2000,
+        "answerText":"",
+        "explainText":""
+        },
+	    {
+        "knowledgeType":"READ_RAW_WORD",
+        "questionType":2000,
+        "guideText":"跟我读，black",
+        "questionText":"black",
+        "answerText":"black,input",
+        "explainText":"",
+        "wrongText":"发音不对哦，black",
+        "reviewText":"小朋友，多读几遍,练习练习吧"
+        },
+        {
+        "knowledgeType":"",
+        "guideText":"让我们练习一下写这个单词",
+        "questionText":"",
+        "stemText":"单词书写练习",
+        "stemType":2001,
+        "answerText":"",
+        "explainText":""
+        },
+        {
+         "knowledgeType":"COPY",
+         "questionType":2001,
+         "guideText":"black",
+         "questionText":"black",
+         "answerText":"black,input",
+         "explainText":"",
+         "wrongText":"",
+         "reviewText":""
+        },
+        {
+        "knowledgeType":"",
+        "guideText":"依据中文默写单词",
+        "questionText":"",
+        "stemText":"单词默写",
+        "stemType":2002,
+        "answerText":"",
+        "explainText":""
+        },
+        {
+        "knowledgeType":"DICTATION",
+        "questionType":2002,
+        "guideText":"黑色，黑色的,black",
+        "questionText":"黑色，黑色的",
+        "answerText":"black,input",
+        "explainText":"",
+        "wrongText":"",
+        "reviewText":""
+        },
+
+        {
+        "knowledgeType":"",
+        "guideText":"练习读课文",
+        "stemText":"读课文",
+        "questionText":"",
+        "stemType":2003,
+        "answerText":"",
+        "explainText":""
+        },
+
+	    {
+        "knowledgeType":"READ_RAW_WORD",
+        "questionType":2003,
+        "guideText":"下一句，i see purple",
+        "questionText":"I see purple",
+        "answerText":"i see purple,input",
+        "explainText":"",
+        "wrongText":"发音不对哦，i see purple",
+        "reviewText":""
+        },
+	{
+        "knowledgeType":"READ_RAW_WORD",
+        "questionType":2003,
+        "guideText":"下一句，i see the beautiful rainbow",
+        "questionText":"I see the beautiful rainbow",
+        "answerText":"i see the beautiful rainbow,input",
+        "explainText":"",
+        "wrongText":"发音不对哦，i see the beautiful rainbow",
+        "reviewText":""
+        },
+	{
+        "knowledgeType":"READ_RAW_WORD",
+        "questionType":2003,
+        "guideText":"下一句，shining over there",
+        "questionText":"Shining over there",
+        "answerText":"Shining over there,input",
+        "explainText":"",
+        "wrongText":"发音不对哦，shining over there",
+        "reviewText":""
+        },
+	{
+        "knowledgeType":"READ_RAW_WORD",
+        "questionType":2003,
+        "guideText":"下一句，outside my window",
+        "questionText":"Outside my window",
+        "answerText":"Outside my window,input",
+        "explainText":"",
+        "wrongText":"发音不对哦，outside my window",
+        "reviewText":""
+        },
+        {
+        "knowledgeType":"",
+        "guideText":"练习对话，look and say",
+        "questionText":"",
+        "stemText":"Look and say",
+        "stemType":2004,
+        "answerText":"",
+        "explainText":""
+        },
+	    {
+        "knowledgeType":"",
+        "questionType":2004,
+        "guideText":"小朋友，当你想询问别人，某样东西是什么颜色可以使用下面的句型",
+        "questionText":"
+What color are...?
+They are...",
+        "answerText":"",
+        "wrongText":"",
+        "reviewText":"",
+        "explainText":""
+        },
+
+		{
+             "knowledgeType":"READ_RAW_WORD",
+             "questionType":2000,
+             "guideText":"下面我们来练习一下这个句型，我先读一遍给你听, What can you see?，，，i can see a pear，，，what colour is it? ，，，it's yellow，，，听明白了吗？",
+             "questionText":"
+What can you see?
+i can see a pear.
+what colour is it?
+it's yellow",
+             "answerText":"yes,input",
+             "wrongText":"那我再读一遍，仔细听哦, What can you see? i can see a pear what colour is it? it's yellow，，，听明白了吗？",
+             "explainText":""
+		},
+		{
+             "knowledgeType":"",
+             "questionType":2004,
+             "guideText":"让我们来练习一下，What can you see?",
+             "questionText":"What can you see?",
+             "answerText":"",
+             "explainText":""
+        },
+		{
+             "knowledgeType":"",
+             "questionType":2004,
+             "guideText":"",
+             "questionText":"i can see a pear",
+             "answerText":"i can see a pear,input",
+             "explainText":"",
+             "wrongText":"跟我念，i can see a pear",
+             "reviewText":""
+        },
+		{
+             "knowledgeType":"",
+             "questionType":2004,
+             "guideText":"what colour is it?",
+             "questionText":"what colour is it?",
+             "answerText":"",
+             "explainText":""
+        },
+		{
+             "knowledgeType":"",
+             "questionType":2004,
+             "guideText":"",
+             "questionText":"it's yellow",
+             "answerText":"it's yellow,input,input",
+             "explainText":"",
+             "wrongText":"跟我念，it's yellow",
+             "reviewText":""
+        }
+    ]
+}

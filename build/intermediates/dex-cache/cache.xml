@@ -2,25 +2,88 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\src\main\java\com\aihomework\voicedemo\Hanvon-SDK-Android-1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="57e724890f25865649a32fe02c47eaa1796883e6">
+        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\debug\Hanvon-SDK-Android-1.0-654317347db6f42f51d1d3a54590b6a0a176764f.jar" />
+    </item>
+    <item
+        jar="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\src\main\java\com\aihomework\userAction\pinyin4j-2.5.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ae353005f973da1cd8545b54354504c2503f6865">
+        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\debug\pinyin4j-2.5.0-0a58ceae5070c06fe64d2409c70c43424c80c97b.jar" />
+    </item>
+    <item
+        jar="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\src\main\java\com\aihomework\userAction\pinyin4j-2.5.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ae353005f973da1cd8545b54354504c2503f6865">
+        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\debug\pinyin4j-2.5.0-0a58ceae5070c06fe64d2409c70c43424c80c97b.jar" />
+    </item>
+    <item
+        jar="E:\SDK\android-sdk-windows\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-3e6ddb6f14df75e156deb3161cc3372f9f47c825.jar" />
+    </item>
+    <item
+        jar="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\src\main\java\com\aihomework\voicedemo\Hanvon-SDK-Android-1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="57e724890f25865649a32fe02c47eaa1796883e6">
+        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\debug\Hanvon-SDK-Android-1.0-654317347db6f42f51d1d3a54590b6a0a176764f.jar" />
+    </item>
+    <item
+        jar="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\src\main\java\com\aihomework\TuLingAPI\gson-2.3.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\debug\gson-2.3.1-5b209dc400aaa1963d15fb1fd175539f17247a3c.jar" />
+    </item>
+    <item
+        jar="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\src\main\java\com\aihomework\TuLingAPI\gson-2.3.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\debug\gson-2.3.1-5b209dc400aaa1963d15fb1fd175539f17247a3c.jar" />
+    </item>
+    <item
         jar="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\libs\Sunflower.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="9271dc08aae352e9b88115ee7e36becff800ad0f">
-        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\release\Sunflower-c18773ddb37fbce2d84bc6c3b08ecd692b4f2e1e.jar" />
+        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\debug\Sunflower-c18773ddb37fbce2d84bc6c3b08ecd692b4f2e1e.jar" />
+    </item>
+    <item
+        jar="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\libs\Sunflower.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="9271dc08aae352e9b88115ee7e36becff800ad0f">
+        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\debug\Sunflower-c18773ddb37fbce2d84bc6c3b08ecd692b4f2e1e.jar" />
     </item>
     <item
         jar="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\libs\Msc.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="bad3f17744b208362aa7e20242a6261cf2d21977">
-        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\release\Msc-5a64a0cf55281c5a5e6329fca79486c883199864.jar" />
+        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\debug\Msc-5a64a0cf55281c5a5e6329fca79486c883199864.jar" />
+    </item>
+    <item
+        jar="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\libs\Msc.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="bad3f17744b208362aa7e20242a6261cf2d21977">
+        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\debug\Msc-5a64a0cf55281c5a5e6329fca79486c883199864.jar" />
     </item>
     <item
         jar="E:\SDK\android-sdk-windows\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\release\support-v4-18.0.0-3e6ddb6f14df75e156deb3161cc3372f9f47c825.jar" />
+        <dex dex="C:\Users\bluemaple\AndroidStudioProjects\SpeechDemo1\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-3e6ddb6f14df75e156deb3161cc3372f9f47c825.jar" />
     </item>
 
 </items>

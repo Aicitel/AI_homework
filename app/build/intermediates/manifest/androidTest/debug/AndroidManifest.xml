@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.iflytek.voicedemo.test">
+    package="com.aihomework.voicedemo.test">
 
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="8" />
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="11" />
 
     <application>
         <uses-library android:name="android.test.runner" />
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="com.iflytek.voicedemo"
+                     android:targetPackage="com.aihomework.voicedemo"
                      android:handleProfiling="false"
                      android:functionalTest="false"
-                     android:label="Tests for com.iflytek.voicedemo"/>
+                     android:label="Tests for com.aihomework.voicedemo"/>
 </manifest>

@@ -1,0 +1,144 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/problemTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:text="题目"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/problemTextView"
+        android:id="@+id/stemLayout"
+        android:gravity="center"
+        android:layout_alignParentLeft="true">
+
+        <TextView
+            android:id="@+id/stemTextView"
+            android:textColor="@color/black"
+            android:text="题干"
+            android:textSize="@dimen/question_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_marginTop="100dp"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@+id/readLayout">
+
+        <TextView
+            android:id="@+id/readText"
+            android:layout_marginLeft="25dp"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="这里是课文" />
+
+        <TextView
+            android:id="@+id/readTempText"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="[答案]" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="100dp"
+        android:id="@+id/surfaceLayout"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <SurfaceView
+            android:id="@+id/surface"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:background="@drawable/tianzige"
+            android:layout_below="@+id/wordSurface1"
+            android:layout_centerHorizontal="true" />
+
+        <SurfaceView
+            android:id="@+id/wordSurface1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/tianzige"
+            android:layout_marginTop="10dp"
+            android:layout_alignLeft="@+id/surface" />
+
+        <SurfaceView
+            android:id="@+id/wordSurface2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/tianzige"
+            android:layout_alignTop="@+id/wordSurface1"
+            android:layout_alignRight="@+id/surface" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/dictationButton"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/dictationbutton" />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="@dimen/figure_width"
+        android:layout_height="@dimen/figure_height"
+        android:id="@+id/figureView"
+        android:layout_marginRight="@dimen/figure_right_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/line_result1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="你写了"
+        android:textColor="@color/black"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/debugEditText"
+        android:layout_alignBottom="@+id/line_result2"
+        android:layout_toRightOf="@+id/problemTextView"
+        android:text="input" />
+
+    <Button
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="submit"
+        android:id="@+id/submitButton"
+        android:layout_alignTop="@+id/debugEditText"
+        android:layout_toRightOf="@+id/debugEditText" />
+
+</RelativeLayout>

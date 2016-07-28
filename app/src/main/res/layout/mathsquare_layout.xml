@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/relativeLayout">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_size"
+            android:text="题目"
+            android:id="@+id/questionTextView"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="120dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/black"
+            android:textSize="@dimen/question_size"
+            android:text="答案"
+            android:id="@+id/answerTextView"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/questionTextView" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/squareLayout"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentLeft="true">
+
+        <ImageView
+            android:id="@+id/oneImage"
+            android:src="@drawable/one"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="64dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/twoImage" />
+
+        <ImageView
+            android:id="@+id/twoImage"
+            android:src="@drawable/two"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignTop="@+id/oneImage"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/threeImage"
+            android:src="@drawable/three"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignTop="@+id/twoImage"
+            android:layout_toRightOf="@+id/twoImage" />
+
+        <ImageView
+            android:id="@+id/fourImage"
+            android:src="@drawable/four"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/oneImage"
+            android:layout_alignLeft="@+id/oneImage" />
+
+        <ImageView
+            android:id="@+id/fiveImage"
+            android:src="@drawable/five"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignBottom="@+id/fourImage"
+            android:layout_toRightOf="@+id/fourImage" />
+
+        <ImageView
+            android:id="@+id/sixImage"
+            android:src="@drawable/six"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignTop="@+id/fiveImage"
+            android:layout_toRightOf="@+id/fiveImage" />
+
+        <ImageView
+            android:id="@+id/sevenImage"
+            android:src="@drawable/seven"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/fourImage"
+            android:layout_alignLeft="@+id/fourImage" />
+
+        <ImageView
+            android:id="@+id/eightImage"
+            android:src="@drawable/eight"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/fourImage"
+            android:layout_toRightOf="@+id/fourImage" />
+
+        <ImageView
+            android:id="@+id/nineImage"
+            android:src="@drawable/nine"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/sixImage"
+            android:layout_toRightOf="@+id/fiveImage" />
+
+        <ImageView
+            android:id="@+id/zeroImage"
+            android:src="@drawable/zero"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/sevenImage"
+            android:layout_toLeftOf="@+id/eightImage" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:id="@+id/backspaceImage"
+            android:src="@drawable/backspace"
+            android:layout_alignTop="@+id/zeroImage"
+            android:layout_alignLeft="@+id/eightImage" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/timeProgressBar"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/oneImage" />
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:text="再来一次"
+        android:visibility="invisible"
+        android:background="#00ffff"
+        android:textSize="@dimen/question_size"
+        android:id="@+id/restartButton"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="85dp"
+        android:layout_height="160dp"
+        android:id="@+id/figureView"
+        android:layout_marginRight="@dimen/figure_right_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>

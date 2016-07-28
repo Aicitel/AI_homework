@@ -1,0 +1,23 @@
+{
+    "subjectType":0,
+    "homework":[
+		{
+            "knowledgeType":"",
+            "guideText":"下一题，3+4",
+            "questionText":"3+4",
+            "answerText":"7,七",
+            "explainText":"",
+            "wrongText":"这道题的答案是7",
+            "reviewText":"消化一下多想一想"
+		},
+		{
+            "knowledgeType":"",
+            "guideText":"下一题，2+12",
+            "questionText":"2+12",
+            "answerText":"14,十四",
+            "explainText":"",
+            "wrongText":"这道题的答案是14",
+            "reviewText":"消化一下多想一想"
+		}
+    ]
+}

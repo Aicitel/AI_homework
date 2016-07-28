@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.iflytek.voicedemo"
+    package="com.aihomework.voicedemo"
     android:versionCode="1"
     android:versionName="2.0.1018.1013" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="8" />
+        android:minSdkVersion="11"
+        android:targetSdkVersion="11" />
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,64 +19,55 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <application
-        android:name="com.iflytek.voicedemo.SpeechApp"
+        android:name="com.aihomework.voicedemo.GlobalParameterApplication"
         android:icon="@drawable/icon"
-        android:label="讯飞语音示例" >
+        android:label="AIHOMEWORK" >
         <activity
-            android:name="com.iflytek.voicedemo.entranceDemo"
+            android:name="com.aihomework.voicedemo.EntranceActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:icon="@drawable/icon"
             android:label="AI homework"
-            android:screenOrientation="portrait" >
+            android:largeHeap="true"
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.iflytek.speech.setting.TtsSettings" >
-        </activity>
-        <activity android:name="com.iflytek.speech.setting.IatSettings" >
-        </activity>
-        <activity android:name="com.iflytek.speech.setting.UnderstanderSettings" >
-        </activity>
         <activity
-            android:name="com.iflytek.voicedemo.IatDemo"
+            android:name="com.aihomework.voicedemo.SplashActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.iflytek.voicedemo.AsrDemo"
+            android:name="com.aihomework.voicedemo.MathSquare"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.iflytek.voicedemo.UnderstanderDemo"
+            android:name="com.aihomework.voicedemo.EnglishDemo"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.iflytek.voicedemo.TtsDemo"
+            android:name="com.aihomework.voicedemo.ChineseActivity"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.aihomework.voicedemo.SumActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.iflytek.voicedemo.IseDemo"
-            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:name="com.aihomework.voicedemo.RobotGameActivity"
             android:screenOrientation="portrait" >
         </activity>
-        <activity
-            android:name="com.iflytek.voicedemo.figureDemo"
-            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name="com.iflytek.speech.setting.IseSettings"
-            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
-        </activity>
+
         <!-- 移动统计分析 -->
         <meta-data
             android:name="IFLYTEK_APPKEY"

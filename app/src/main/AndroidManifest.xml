@@ -1,66 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.iflytek.voicedemo"
+    package="com.aihomework.voicedemo"
     android:versionCode="1"
     android:versionName="2.0.1018.1013" >
 
     <application
         android:icon="@drawable/icon"
-        android:name="SpeechApp"
-        android:label="讯飞语音示例" >
+        android:name=".GlobalParameterApplication"
+        android:label="AIHOMEWORK" >
         <activity
-            android:name="com.iflytek.voicedemo.entranceDemo"
+            android:name=".EntranceActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:icon="@drawable/icon"
+            android:largeHeap="true"
             android:label="AI homework"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.iflytek.speech.setting.TtsSettings" >
-        </activity>
-        <activity android:name="com.iflytek.speech.setting.IatSettings" >
-        </activity>
-        <activity android:name="com.iflytek.speech.setting.UnderstanderSettings" >
-        </activity>
+
         <activity
-            android:name="com.iflytek.voicedemo.IatDemo"
+            android:name=".SplashActivity"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".MathSquare"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.iflytek.voicedemo.AsrDemo"
+            android:name=".EnglishDemo"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".ChineseActivity"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
+            android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.iflytek.voicedemo.UnderstanderDemo"
+            android:name=".SumActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
             android:screenOrientation="portrait" >
         </activity>
+
         <activity
-            android:name="com.iflytek.voicedemo.TtsDemo"
-            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
+            android:name=".RobotGameActivity"
+            android:screenOrientation="portrait">
         </activity>
-        <activity
-            android:name="com.iflytek.voicedemo.IseDemo"
-            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name="com.iflytek.voicedemo.figureDemo"
-            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name="com.iflytek.speech.setting.IseSettings"
-            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale"
-            android:screenOrientation="portrait" >
-        </activity>
+
         <!-- 移动统计分析 -->
         <meta-data
             android:name="IFLYTEK_APPKEY"
@@ -85,5 +79,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
 
 </manifest>

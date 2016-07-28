@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#00000000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/problemTextView"
+        android:layout_width="@dimen/subject_choose_width"
+        android:layout_height="@dimen/blackboard_height"
+        android:background="@drawable/blackboard"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"
+        android:text="题目"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:id="@+id/surfaceLayout"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SurfaceView
+            android:id="@+id/wordSurface1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/tianzige"
+            android:layout_alignLeft="@+id/surface" />
+
+        <SurfaceView
+            android:id="@+id/wordSurface2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignTop="@+id/wordSurface1"
+            android:background="@drawable/tianzige"
+            android:layout_alignRight="@+id/surface" />
+
+        <SurfaceView
+            android:id="@+id/surface"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/tianzige"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressText"
+            android:textSize="@dimen/question_size"
+            android:textColor="#00ff00"
+            android:layout_below="@+id/wordSurface1"
+            android:layout_centerHorizontal="true"
+            android:text="0 / 4" />
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 17
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.iflytek.voicedemo"
-        minSdkVersion 8
-        targetSdkVersion 8
+        applicationId "com.aihomework.voicedemo"
+        minSdkVersion 11
+        targetSdkVersion 11
     }
 
     buildTypes {
@@ -22,4 +22,8 @@ dependencies {
     compile 'com.android.support:support-v4:18.0.0'
     compile files('libs/Msc.jar')
     compile files('libs/Sunflower.jar')
+    compile files('src/main/java/com/iflytek/TuLingAPI/gson-2.3.1.jar')
+    compile files('src/main/java/com/aihomework/TuLingAPI/gson-2.3.1.jar')
+    compile files('src/main/java/com/aihomework/userAction/pinyin4j-2.5.0.jar')
+    compile files('src/main/java/com/aihomework/voicedemo/Hanvon-SDK-Android-1.0.jar')
 }
